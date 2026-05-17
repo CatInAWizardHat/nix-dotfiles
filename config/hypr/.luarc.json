@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "/home/hastur/.config/hypr"
+    ]
+  },
+  "diagnostics": {
+    "globals": [ "hl" ]
+  }
+}
