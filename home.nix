@@ -12,6 +12,10 @@
     vim = "vim";
   };
 in {
+  imports = [
+    ./modules/theme.nix
+  ];
+
   home.username = "hastur";
   home.homeDirectory = "/home/hastur";
   home.stateVersion = "25.11";
@@ -20,7 +24,7 @@ in {
       enable = true;
       shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake ~/nix-dotfiles#nixos";
-	home-check = "echo home-manager is working";
+        home-check = "echo home-manager is working";
       };
       initExtra = ''
         export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
@@ -42,16 +46,16 @@ in {
           name = "Alex";
           email = "125680751+CatInAWizardHat@users.noreply.github.com";
         };
-	init = {
-	  defaultBranch = "main";
-	};
-	signing = {
-	  key = "/home/hastur/.ssh/id_ed25519.pub";
-	  signByDefault = true;
-	};
-	gpg = {
-	  format = "ssh";
-	};
+        init = {
+          defaultBranch = "main";
+        };
+        signing = {
+          key = "/home/hastur/.ssh/id_ed25519.pub";
+          signByDefault = true;
+        };
+        gpg = {
+          format = "ssh";
+        };
       };
     };
   };
